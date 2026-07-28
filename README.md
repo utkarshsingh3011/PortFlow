@@ -1,12 +1,12 @@
 # 🚢 PortFlow
 
-Production-Inspired Customs Broker Onboarding Platform
+### Production-Inspired Customs Broker Onboarding Platform
 
-> Production-inspired customs broker onboarding platform built with FastAPI, PostgreSQL, React, TypeScript and Tailwind CSS.
+> Production-inspired customs broker onboarding platform built with **FastAPI, PostgreSQL, React, TypeScript and Tailwind CSS**.
 
-PortFlow digitizes the customs broker onboarding process by replacing manual paperwork with a secure workflow-driven platform for customer management, document verification, compliance tracking and audit reporting.
+PortFlow digitizes the customs broker onboarding process by replacing manual paperwork with a secure workflow-driven platform for customer management, document verification, compliance tracking, and audit reporting.
 
-It provides brokers with a centralized workspace to manage importer onboarding through a structured 7-step customs clearance process while maintaining complete audit history and document storage.
+It provides brokers with a centralized workspace to manage importer onboarding through a structured **7-step customs clearance process** while maintaining complete audit history and document storage.
 
 ![React](https://img.shields.io/badge/React-18-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
@@ -17,33 +17,70 @@ It provides brokers with a centralized workspace to manage importer onboarding t
 
 ---
 
-## Screenshots
+## 📋 Submission Summary
+
+✅ Responsive React + TypeScript frontend
+
+✅ FastAPI REST API backend
+
+✅ PostgreSQL database integration
+
+✅ JWT Authentication & Authorization
+
+✅ Complete 7-Step Customs Broker Onboarding Workflow
+
+✅ Customer Management Dashboard
+
+✅ Document Upload & Management
+
+✅ Audit Activity Timeline
+
+✅ PDF Report Export
+
+✅ JSON Data Export
+
+✅ Mobile Responsive UI
+
+---
+
+## 🎥 Demo
+
+> A walkthrough of the complete customs broker onboarding workflow.
+
+<p align="center">
+  <img src="screenshots/portflow-demo.gif" alt="PortFlow Demo" width="100%">
+</p>
+
+> **Note**
+>
+> This project is designed to run locally because it depends on a FastAPI backend,
+> PostgreSQL database, JWT authentication, and secure file uploads.
+> Instead of deploying an incomplete cloud version, I have included a complete
+> demo GIF showcasing all implemented features and workflows.
+
+---
+
+## 📸 Screenshots
 
 ### Landing Page
 
 ![Landing Page](screenshots/landing-page.png)
 
----
-
-### Broker Dashboard
+### Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
-
----
 
 ### Customer Profile
 
 ![Customer Profile](screenshots/customer-profile.png)
 
----
-
 ### Onboarding Workflow
 
-![Workflow](screenshots/onboarding-workflow.png)
+![Onboarding Workflow](screenshots/onboarding-workflow.png)
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
 - [Project Overview](#project-overview)
 - [Key Features](#key-features)
@@ -63,9 +100,9 @@ It provides brokers with a centralized workspace to manage importer onboarding t
 
 ## Project Overview
 
-Customs brokers manage complex regulatory onboarding steps for trade businesses—including Import Export Code (IEC) verification with DGFT, Customs Power of Attorney (PoA) execution, AD Code bank registrations, and ICEGATE portal EDI linkage.
+Customs brokers handle multiple regulatory and compliance steps before an importer can begin international trade. These activities typically involve document verification, workflow tracking, compliance approvals, and audit reporting.
 
-**PortFlow** transforms this traditionally paper-heavy process into an automated, operational workspace where brokers can track progress, verify documents, audit timeline events, and issue compliance reports.
+**PortFlow** streamlines this process by providing a centralized digital workspace where brokers can manage customers, monitor onboarding progress, securely store compliance documents, generate reports, and maintain a complete audit trail throughout the customs onboarding lifecycle.
 
 ---
 
@@ -112,25 +149,19 @@ Customs brokers manage complex regulatory onboarding steps for trade businesses�
 
 ## Tech Stack
 
-## Backend
-
-- **Framework:** FastAPI (Python 3.11+)
-- **Language:** Python
-- **Database:** PostgreSQL
-- **ORM:** SQLAlchemy 2.0 (Async)
-- **Database Migrations:** Alembic
-- **Validation:** Pydantic v2
-- **Authentication:** JWT (PyJWT) + Passlib (bcrypt)
-- **Server:** Uvicorn
-
-## Frontend
-
-- **Framework:** React 18 + Vite
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Routing:** React Router v6
-- **Icons:** Lucide React
-- **HTTP Client:** Axios
+| Category | Technology |
+|-----------|------------|
+| Frontend | React 18, TypeScript, Vite |
+| Styling | Tailwind CSS |
+| Backend | FastAPI |
+| Database | PostgreSQL |
+| ORM | SQLAlchemy 2.0 |
+| Authentication | JWT, Passlib (bcrypt) |
+| Validation | Pydantic |
+| Database Migration | Alembic |
+| File Upload | FastAPI UploadFile |
+| API Communication | Axios |
+| Icons | Lucide React |
 
 ---
 
@@ -242,87 +273,104 @@ The application will be accessible at: `http://localhost:5173`.
 
 ## Environment Variables
 
+Create the following environment files before running the application.
+
 ### Backend (`backend/.env`)
 
 ```env
-PROJECT_NAME="PortFlow"
-SECRET_KEY="your_super_secret_jwt_key_here"
-ALGORITHM="HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES=1440
-DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5432/portflow"
-CORS_ORIGINS=["http://localhost:5173"]
+PROJECT_NAME=<project_name>
+SECRET_KEY=<jwt_secret>
+DATABASE_URL=<postgres_connection_string>
+ACCESS_TOKEN_EXPIRE_MINUTES=<expiry_minutes>
+CORS_ORIGINS=<frontend_origin>
 ```
 
 ### Frontend (`frontend/.env`)
 
 ```env
-VITE_API_BASE_URL="http://localhost:8000/api/v1"
+VITE_API_BASE_URL=http://localhost:8000/api/v1
 ```
 
 ---
 
 ## Authentication & Authorization
 
-- **Registration & Login**: Brokers register with company name, full name, email, and password.
-- **Bcrypt Hashing**: Passwords hashed using `passlib[bcrypt]`.
-- **JWT Authentication**: Authenticated requests carry `Authorization: Bearer <token>`.
-- **Route Protection**: React Router guards redirect unauthenticated users to `/login`.
-- **Data Isolation**: Database queries enforce `where(Customer.broker_id == current_user.id)` to guarantee privacy between brokers.
+- **Broker Registration & Login** using secure password hashing.
+- **JWT-based Authentication** for protected API access.
+- **Protected Client Routes** using React Router authentication guards.
+- **Role-based Data Isolation** ensuring brokers only access their own customers.
+- **Password Security** implemented using Passlib (bcrypt).
 
 ---
 
 ## Database Schema & Migrations
 
-PortFlow uses PostgreSQL with Alembic version control:
+PortFlow uses **PostgreSQL** with **Alembic** for database version control and **SQLAlchemy ORM** for data modeling.
 
-- `users`: Broker accounts (`id`, `company_name`, `full_name`, `email`, `hashed_password`).
-- `customers`: Importer/Exporter profiles (`id`, `broker_id`, `name`, `email`, `gstin`, `customer_type`).
-- `onboarding_flows`: Assigned onboarding journeys (`id`, `customer_id`, `user_id`, `title`, `status`).
-- `onboarding_steps`: Step form data (`id`, `flow_id`, `order`, `title`, `status`, `data`).
-- `customer_documents`: Uploaded document vault (`id`, `customer_id`, `step_id`, `document_type`, `filename`, `file_path`, `file_size`).
-- `customer_activities`: Persistent audit log (`id`, `customer_id`, `user_id`, `event_type`, `title`, `description`, `created_at`).
+### Core Entities
+
+- **Users** – Customs broker accounts and authentication.
+- **Customers** – Importer/Exporter profiles managed by brokers.
+- **Onboarding Flows** – Tracks each customer's onboarding journey.
+- **Workflow Steps** – Stores progress and form data for each onboarding stage.
+- **Documents** – Secure storage of uploaded compliance documents.
+- **Activity Logs** – Audit trail of important system events.
+
+Database schema changes are managed through Alembic migrations to ensure consistent deployments.
 
 ---
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/api/v1/auth/register` | Register a new broker account |
-| `POST` | `/api/v1/auth/login` | Authenticate broker and return JWT token |
-| `GET` | `/api/v1/customers` | List broker customers (paginated) |
-| `POST` | `/api/v1/customers` | Create new customer account |
-| `GET` | `/api/v1/customers/{id}` | Get customer profile details |
-| `PUT` | `/api/v1/customers/{id}` | Update customer attributes |
-| `DELETE`| `/api/v1/customers/{id}` | Delete customer account |
-| `GET` | `/api/v1/customers/activities/recent` | List broker recent activity timeline |
-| `GET` | `/api/v1/onboarding/flows` | List active onboarding flows |
-| `PATCH` | `/api/v1/onboarding/steps/{id}` | Update step form data & status |
-| `POST` | `/api/v1/customers/{id}/documents` | Upload customer KYC document |
-| `GET` | `/api/v1/documents/{id}/download` | Download customer document file |
+| Module | Functionality |
+|---------|---------------|
+| Authentication | Broker Registration & Login |
+| Customers | Create, Update, Delete, View Customer Profiles |
+| Onboarding | Retrieve Workflow, Update Step Data, Resume Progress |
+| Documents | Upload, Download & Manage Customer Documents |
+| Activity | Recent Timeline & Audit Logs |
+| Reports | Export PDF & JSON Reports |
 
 ---
 
 ## Security Considerations
 
-- **Strict CORS Policy**: Restricted to configured frontend origins.
-- **SQL Injection Prevention**: Parameterized queries enforced via SQLAlchemy ORM.
-- **Input Sanitation**: Pydantic v2 models validate and sanitize request payloads.
-- **Secure File Storage**: Unique file names generated on upload to prevent directory traversal.
-
+- JWT-based authentication for secure API access.
+- Password hashing using **bcrypt (Passlib)**.
+- Input validation using **Pydantic** models.
+- SQL injection protection through **SQLAlchemy ORM**.
+- Restricted CORS configuration.
+- Secure file upload handling.
+- Broker-level data isolation ensuring users access only their own customers.
+  
 ---
 
-## Report Exports (PDF & JSON)
+## Report Exports
 
-Brokers can export customer profiles and onboarding status reports:
-- **PDF Report**: Generates a clean, branded HTML print document with company details, progress gauge, 7-step audit table, uploaded document vault summary, and activity timeline.
-- **JSON Export**: Downloads structured JSON containing full customer metadata, step submissions, document records, and activity timestamps.
+PortFlow supports exporting onboarding information in multiple formats.
+
+### PDF Export
+
+- Customer profile summary
+- Workflow progress
+- Verification status
+- Uploaded documents
+- Activity timeline
+
+### JSON Export
+
+- Complete customer profile
+- Workflow data
+- Document metadata
+- Audit activity records
 
 ---
 
 ## Future Improvements
 
-- [ ] Webhook integration for real-time DGFT and ICEGATE portal status checks.
-- [ ] Multi-user team permissions (Broker Admin, Field Agent, Auditor roles).
-- [ ] Email notifications to customers upon step completions.
-- [ ] Automated OCR parsing of uploaded GSTIN and IEC certificates.
+- Real-time DGFT & ICEGATE integrations
+- OCR-based document verification
+- Email notifications & workflow reminders
+- Multi-user organization support
+- Analytics & reporting dashboard
+- Cloud storage for uploaded documents
