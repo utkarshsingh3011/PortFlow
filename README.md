@@ -8,13 +8,15 @@ PortFlow is a production-inspired customs broker onboarding platform that digiti
 
 It replaces manual paperwork with a secure workflow-driven application for customer management, document verification, compliance tracking, audit logging, and report generation.
 
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
-![JWT Auth](https://img.shields.io/badge/Auth-JWT-orange)
-![Responsive](https://img.shields.io/badge/UI-Responsive-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+<p>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JWT-Authentication-orange"/>
+  <img src="https://img.shields.io/badge/Responsive-UI-success"/>
+  <img src="https://img.shields.io/badge/License-MIT-green"/>
+</p>
 
 ---
 
