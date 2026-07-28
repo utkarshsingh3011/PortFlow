@@ -4,42 +4,40 @@
 
 > Production-inspired customs broker onboarding platform built with **FastAPI, PostgreSQL, React, TypeScript and Tailwind CSS**.
 
-PortFlow digitizes the customs broker onboarding process by replacing manual paperwork with a secure workflow-driven platform for customer management, document verification, compliance tracking, and audit reporting.
+PortFlow is a production-inspired customs broker onboarding platform that digitizes the complete importer onboarding lifecycle.
 
-It provides brokers with a centralized workspace to manage importer onboarding through a structured **7-step customs clearance process** while maintaining complete audit history and document storage.
+It replaces manual paperwork with a secure workflow-driven application for customer management, document verification, compliance tracking, audit logging, and report generation.
 
-![React](https://img.shields.io/badge/React-18-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-UI-38bdf8)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
+![JWT Auth](https://img.shields.io/badge/Auth-JWT-orange)
+![Responsive](https://img.shields.io/badge/UI-Responsive-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
 ## 📋 Submission Summary
 
-✅ Responsive React + TypeScript frontend
+### Backend
+- ✅ FastAPI REST API
+- ✅ PostgreSQL + SQLAlchemy
+- ✅ JWT Authentication
+- ✅ Alembic Migrations
 
-✅ FastAPI REST API backend
+### Frontend
+- ✅ React 18 + TypeScript
+- ✅ Tailwind CSS
+- ✅ Responsive UI
 
-✅ PostgreSQL database integration
-
-✅ JWT Authentication & Authorization
-
-✅ Complete 7-Step Customs Broker Onboarding Workflow
-
-✅ Customer Management Dashboard
-
-✅ Document Upload & Management
-
-✅ Audit Activity Timeline
-
-✅ PDF Report Export
-
-✅ JSON Data Export
-
-✅ Mobile Responsive UI
+### Features
+- ✅ 7-Step Customs Onboarding Workflow
+- ✅ Customer Management
+- ✅ Document Management
+- ✅ Activity Timeline
+- ✅ PDF Export
+- ✅ JSON Export
 
 ---
 
