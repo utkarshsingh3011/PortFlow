@@ -1,8 +1,43 @@
-# PortFlow - Production Customs Broker Onboarding & Customer Portal
+# ðŸš¢ PortFlow
 
-PortFlow is a production-ready, full-stack SaaS platform designed for Customs House Agents (CHAs) and freight forwarding brokers to streamline customer onboarding, KYC document verification, customs port registration, and compliance tracking. 
+> Production-inspired customs broker onboarding platform built with FastAPI, PostgreSQL, React, TypeScript and Tailwind CSS.
 
-Built with **FastAPI**, **PostgreSQL**, **React (TypeScript)**, and **Tailwind CSS**, PortFlow features secure JWT authentication, multi-step customs wizards, a document management vault, real-time activity audit trails, and multi-format report exports (PDF & JSON).
+PortFlow digitizes the customs broker onboarding process by replacing manual paperwork with a secure workflow-driven platform for customer management, document verification, compliance tracking and audit reporting.
+
+It provides brokers with a centralized workspace to manage importer onboarding through a structured 7-step customs clearance process while maintaining complete audit history and document storage.
+
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-UI-38bdf8)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+## Screenshots
+
+### Landing Page
+
+![Landing Page](screenshots/landing-page.png)
+
+---
+
+### Broker Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### Customer Profile
+
+![Customer Profile](screenshots/customer-profile.png)
+
+---
+
+### Onboarding Workflow
+
+![Workflow](screenshots/onboarding-workflow.png)
 
 ---
 
@@ -36,15 +71,16 @@ Customs brokers manage complex regulatory onboarding steps for trade businessesâ
 
 1. **Broker Authentication & Security**:
    - Secure broker registration and login with bcrypt password hashing.
-   - Stateless JSON Web Token (JWT) access tokens with automated authorization interceptors and route guards.
+   - Stateless JWT authentication for secure API access.
+   - Protected frontend routes using React Router.
    - Broker-level data isolation ensuring brokers only manage their assigned customers.
 
 2. **Interactive 7-Step Customs Onboarding Wizard**:
    - **Step 1**: DGFT Import Export Code (IEC) & GSTIN Verification.
    - **Step 2**: Customs Power of Attorney (PoA) Authorization.
-   - **Step 3**: AD Code & Customs Port (JNPT, Delhi Air Cargo, Mundra, etc.) Registration.
+   - **Step 3**: Step 3: AD Code & Port Registration.
    - **Step 4**: KYC Document Vault Verification.
-   - **Step 5**: ICEGATE Portal Integration & DSC Linkage.
+   - **Step 5**: Step 5: ICEGATE Registration & DSC Details.
    - **Step 6**: Duty Deferment Facility & Export License Setup.
    - **Step 7**: Compliance Audit Sign-off & Final Account Activation.
 
@@ -54,10 +90,10 @@ Customs brokers manage complex regulatory onboarding steps for trade businessesâ
 
 4. **Real Audit Activity System**:
    - Automatically logs events (`customer_created`, `customer_updated`, `step_completed`, `document_uploaded`, `document_deleted`) in PostgreSQL.
-   - Real-time reverse chronological activity feed on the dashboard and profile pages.
+   - Reverse chronological activity feed.
 
 5. **Operational Broker Workspace Dashboard**:
-   - Live metrics (Total Customers, Active Journeys, Completed Verification Steps, Average Progress %).
+   - Dashboard metrics (Total Customers, Active Journeys, Completed Verification Steps, Average Progress %).
    - 1-click **Resume Onboarding** shortcuts for active customer flows.
    - Recent customer tables, pending verification queues, and audit feeds.
 
@@ -65,26 +101,34 @@ Customs brokers manage complex regulatory onboarding steps for trade businessesâ
    - **Printable PDF Audit Report**: Formatted multi-page print view with company profile, progress gauge, 7-step status breakdown, document vault summary, and timeline audit log.
    - **Structured JSON Export**: Export complete customer onboarding data for integration with external ERP/CRM systems.
 
+7. **Responsive User Experience**:
+   - Responsive interface for desktop, tablet, and mobile devices.
+   - Clean dashboard for brokers with intuitive navigation.
+   - Landing page showcasing platform capabilities and workflow.
+
 ---
 
 ## Tech Stack
 
-### Backend
-- **Framework**: FastAPI (Python 3.11+)
-- **Database**: PostgreSQL
-- **ORM**: SQLAlchemy 2.0 (Async Extension)
-- **Migrations**: Alembic
-- **Validation**: Pydantic v2
-- **Authentication**: PyJWT + Passlib (bcrypt)
-- **Server**: Uvicorn
+## Backend
 
-### Frontend
-- **Framework**: React 18 + Vite
-- **Language**: TypeScript
-- **Styling**: Vanilla CSS + Tailwind CSS
-- **Routing**: React Router v6
-- **Icons**: Lucide React
-- **HTTP Client**: Axios (with JWT Interceptors)
+- **Framework:** FastAPI (Python 3.11+)
+- **Language:** Python
+- **Database:** PostgreSQL
+- **ORM:** SQLAlchemy 2.0 (Async)
+- **Database Migrations:** Alembic
+- **Validation:** Pydantic v2
+- **Authentication:** JWT (PyJWT) + Passlib (bcrypt)
+- **Server:** Uvicorn
+
+## Frontend
+
+- **Framework:** React 18 + Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Routing:** React Router v6
+- **Icons:** Lucide React
+- **HTTP Client:** Axios
 
 ---
 
